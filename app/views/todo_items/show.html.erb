@@ -1,6 +1,7 @@
+<h1>Show Todo Item</h1>
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>List name:</strong>
+  <strong>List Name:</strong>
   <%= @todo_list.list_name %>
 </p>
 
@@ -10,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Due date:</strong>
+  <strong>Due Date:</strong>
   <%= @todo_item.due_date %>
 </p>
 
@@ -21,9 +22,17 @@
 
 <p>
   <strong>Completed:</strong>
-  <%= @todo_item.completed %>
+  <%if @todo_item.completed.nil? %>
+  	false
+  <% else %>
+  	<%= @todo_item.completed %>
+   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_todo_list_todo_item_path(@todo_list, @todo_item) %>
-<%= link_to 'Destroy', todo_list_todo_item_path(@todo_list, @todo_item), method: :delete %>
+<footer>
+<nav>
+<%= link_to 'Edit', edit_todo_list_todo_item_path(@todo_list, @todo_item) %> |
+<%= link_to 'Destroy', todo_list_todo_item_path(@todo_list, @todo_item), method: :delete %> |
 <%= link_to 'Back', @todo_list %>
+</nav>
+</footer>

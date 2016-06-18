@@ -1,12 +1,13 @@
+<h1>Show Todo List</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>List name:</strong>
+  <strong>List Name:</strong>
   <%= @todo_list.list_name %>
 </p>
 
 <p>
-  <strong>List due date:</strong>
+  <strong>List Due Date:</strong>
   <%= @todo_list.list_due_date %>
 </p>
 
@@ -14,10 +15,10 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Due date</th>
+      <th>Due Date</th>
       <th>Description</th>
       <th>Completed</th>
-      <th colspan="3"></th>
+      <th colspan="2">Options</th>
     </tr>
   </thead>
 
@@ -34,6 +35,8 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
 
 <%= link_to 'New Todo Item', new_todo_list_todo_item_path(@todo_list) %> |
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |

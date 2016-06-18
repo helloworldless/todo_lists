@@ -29,7 +29,7 @@ class TodoItemsController < ApplicationController
   def create
     @todo_item = @todo_list.todo_items.new(todo_item_params)
     if @todo_item.save
-      redirect_to [@todo_list, @todo_item], notice: "Todo item was successfully created."
+      redirect_to [@todo_list, @todo_item], notice: "Todo Item was successfully created."
     else
       redirect_to @todo_list, notice: "Unable to create Todo Item"
     end
@@ -74,7 +74,7 @@ class TodoItemsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_item.update(todo_item_params)
-        format.html { redirect_to @todo_list, notice: 'Todo item was successfully updated.' }
+        format.html { redirect_to @todo_list, notice: 'Todo Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_list }
       else
         format.html { render :edit }
